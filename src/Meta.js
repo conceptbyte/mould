@@ -1,3 +1,5 @@
+const InvalidDataError = require('./errors/InvalidDataError');
+
 class Meta {
 
     /**
@@ -21,6 +23,10 @@ class Meta {
      * @param {Object} items
      */
     parse(items) {
+        if (typeof items !== 'object') {
+            throw new InvalidDataError('Invalid data type for model(s)');
+        }
+
         this.items = items;
         return this.items;
     }
