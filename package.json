@@ -1,0 +1,15 @@
+{
+  "name": "mould",
+  "version": "0.1.0",
+  "description": "A library to mould objects to REST API specifications",
+  "main": "src/index.js",
+  "author": "Rajdeep Tarat <rajdeeptarat@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "node_modules/.bin/ava"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
