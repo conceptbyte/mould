@@ -1,5 +1,6 @@
 import { test } from 'ava';
 import Data from '../src/Data';
+import InvalidDataError from '../src/errors/InvalidDataError';
 
 test('It creates a data object', (t) => {
     let data = new Data;
@@ -48,4 +49,18 @@ test('It parses a single model', (t) => {
     let empty = new Data;
     empty = empty.parse({});
     t.deepEqual(empty, null);
+});
+
+test('It throws an exception if an invalid data type is passed', (t) => {
+    t.plan(2);
+
+    let invalid = new Data;
+
+    // It throws correct exception for invalid data
+    let error = t.throws(() => {
+        invalid.parse('something');
+    }, InvalidDataError);
+
+    // The message is generic for all data types
+    t.truthy(error.message === 'Invalid data type for model(s)');
 });

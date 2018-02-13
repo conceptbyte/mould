@@ -1,3 +1,5 @@
+const InvalidDataError = require('./errors/InvalidDataError');
+
 class Data {
 
     /**
@@ -29,7 +31,7 @@ class Data {
             return this.parseObject(items);
         }
 
-        throw new Error('Invalid data type for model(s)');
+        throw new InvalidDataError('Invalid data type for model(s)');
 
     }
 
@@ -41,12 +43,19 @@ class Data {
     parseArray(items) {
 
         return items.map((item) => {
+
             let { id, type, ...attributes } = item;
-            return {
+            let resource =  {
                 id: id || '',
-                type: type || '',
-                attributes: attributes
+                type: type || ''
             };
+
+            if (Object.keys(attributes).length > 0) {
+                resource.attributes = attributes;
+            }
+
+            return resource;
+
         });
 
     }
