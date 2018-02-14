@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/conceptbyte/mould.svg?branch=master)](https://travis-ci.org/conceptbyte/mould)
+
 # Mould
 Mould is a `JSONAPI.org` transformation library for NodeJS and Javascript. Using this library JSON objects can be transformed to ensure that they are compliant with the JSON API Specification.
 
