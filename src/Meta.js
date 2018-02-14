@@ -1,4 +1,5 @@
 const InvalidDataError = require('./errors/InvalidDataError');
+const Keys = require('./config/keys');
 
 class Meta {
 
@@ -6,7 +7,7 @@ class Meta {
      * Construct an instance of class
     */
     constructor() {
-        this.key = 'meta';
+        this.key = Keys.meta;
         this.items = {};
     }
 

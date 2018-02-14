@@ -1,4 +1,5 @@
 const InvalidDataError = require('./errors/InvalidDataError');
+const Keys = require('./config/keys');
 
 class Data {
 
@@ -6,7 +7,7 @@ class Data {
      * Construct a data object
      */
     constructor() {
-        this.key = 'data';
+        this.key = Keys.data;
     }
 
     /**
