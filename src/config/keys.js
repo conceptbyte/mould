@@ -17,5 +17,10 @@ module.exports = {
      * This usually contains pagination links for resource collections.
      */
     links: 'links',
+    /**
+     * Key associated with error objects.
+     * This usually contains errors encountered while performing an operation.
+     */
+    errors: 'errors',
 
 };
